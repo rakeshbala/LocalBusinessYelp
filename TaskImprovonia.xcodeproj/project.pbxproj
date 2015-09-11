@@ -7,15 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14A5904F1BA29C82001BADC6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5904E1BA29C82001BADC6 /* Accounts.framework */; };
+		14A590521BA29EB1001BADC6 /* OAuthClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590511BA29EB1001BADC6 /* OAuthClass.m */; };
+		14A5905C1BA2A485001BADC6 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590581BA2A485001BADC6 /* NSString+URLEncoding.m */; };
+		14A5905D1BA2A485001BADC6 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A5905A1BA2A485001BADC6 /* NSURL+Base.m */; };
+		14A590601BA2A711001BADC6 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A5905F1BA2A711001BADC6 /* OARequestParameter.m */; };
+		14A590631BA2A799001BADC6 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590621BA2A799001BADC6 /* OAToken.m */; };
+		14A590661BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590651BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m */; };
 		14AAB5771BA23883009E928C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB5761BA23883009E928C /* main.m */; };
 		14AAB57A1BA23883009E928C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB5791BA23883009E928C /* AppDelegate.m */; };
 		14AAB57D1BA23883009E928C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB57C1BA23883009E928C /* ViewController.m */; };
 		14AAB5801BA23883009E928C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AAB57E1BA23883009E928C /* Main.storyboard */; };
 		14AAB5821BA23883009E928C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14AAB5811BA23883009E928C /* Assets.xcassets */; };
-		14AAB5851BA23883009E928C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14AAB5831BA23883009E928C /* LaunchScreen.storyboard */; };
+		14AAB58D1BA23981009E928C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AAB58C1BA23981009E928C /* Default-568h@2x.png */; };
+		14AAB5961BA23A42009E928C /* LocalBusinesses.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB5951BA23A42009E928C /* LocalBusinesses.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		14A590261BA2904D001BADC6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		14A5904E1BA29C82001BADC6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		14A590501BA29EB1001BADC6 /* OAuthClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthClass.h; sourceTree = "<group>"; };
+		14A590511BA29EB1001BADC6 /* OAuthClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthClass.m; sourceTree = "<group>"; };
+		14A590571BA2A485001BADC6 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		14A590581BA2A485001BADC6 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		14A590591BA2A485001BADC6 /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Base.h"; sourceTree = "<group>"; };
+		14A5905A1BA2A485001BADC6 /* NSURL+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Base.m"; sourceTree = "<group>"; };
+		14A5905E1BA2A711001BADC6 /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OARequestParameter.h; sourceTree = "<group>"; };
+		14A5905F1BA2A711001BADC6 /* OARequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OARequestParameter.m; sourceTree = "<group>"; };
+		14A590611BA2A799001BADC6 /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken.h; sourceTree = "<group>"; };
+		14A590621BA2A799001BADC6 /* OAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken.m; sourceTree = "<group>"; };
+		14A590641BA2A811001BADC6 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
+		14A590651BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
+		14A590681BA2BCA0001BADC6 /* hmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		14A590691BA2BCC3001BADC6 /* Base64Transcoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
 		14AAB5721BA23883009E928C /* TaskImprovonia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskImprovonia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AAB5761BA23883009E928C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14AAB5781BA23883009E928C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -24,8 +59,10 @@
 		14AAB57C1BA23883009E928C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		14AAB57F1BA23883009E928C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14AAB5811BA23883009E928C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		14AAB5841BA23883009E928C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14AAB5861BA23883009E928C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14AAB58C1BA23981009E928C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		14AAB5941BA23A42009E928C /* LocalBusinesses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalBusinesses.h; path = ../LocalBusinesses.h; sourceTree = "<group>"; };
+		14AAB5951BA23A42009E928C /* LocalBusinesses.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalBusinesses.m; path = ../LocalBusinesses.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,15 +70,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A5904F1BA29C82001BADC6 /* Accounts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14A590671BA2AF0E001BADC6 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				14A590641BA2A811001BADC6 /* NSMutableURLRequest+Parameters.h */,
+				14A590651BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m */,
+				14A590571BA2A485001BADC6 /* NSString+URLEncoding.h */,
+				14A590581BA2A485001BADC6 /* NSString+URLEncoding.m */,
+				14A590591BA2A485001BADC6 /* NSURL+Base.h */,
+				14A5905A1BA2A485001BADC6 /* NSURL+Base.m */,
+				14A590681BA2BCA0001BADC6 /* hmac.h */,
+				14A590691BA2BCC3001BADC6 /* Base64Transcoder.h */,
+				14A590501BA29EB1001BADC6 /* OAuthClass.h */,
+				14A590511BA29EB1001BADC6 /* OAuthClass.m */,
+				14A590611BA2A799001BADC6 /* OAToken.h */,
+				14A590621BA2A799001BADC6 /* OAToken.m */,
+				14A5905E1BA2A711001BADC6 /* OARequestParameter.h */,
+				14A5905F1BA2A711001BADC6 /* OARequestParameter.m */,
+			);
+			name = OAuth;
+			sourceTree = "<group>";
+		};
 		14AAB5691BA23883009E928C = {
 			isa = PBXGroup;
 			children = (
+				14A5904E1BA29C82001BADC6 /* Accounts.framework */,
+				14AAB58C1BA23981009E928C /* Default-568h@2x.png */,
 				14AAB5741BA23883009E928C /* TaskImprovonia */,
 				14AAB5731BA23883009E928C /* Products */,
 			);
@@ -58,13 +119,15 @@
 		14AAB5741BA23883009E928C /* TaskImprovonia */ = {
 			isa = PBXGroup;
 			children = (
+				14A590671BA2AF0E001BADC6 /* OAuth */,
+				14AAB5941BA23A42009E928C /* LocalBusinesses.h */,
+				14AAB5951BA23A42009E928C /* LocalBusinesses.m */,
 				14AAB5781BA23883009E928C /* AppDelegate.h */,
 				14AAB5791BA23883009E928C /* AppDelegate.m */,
 				14AAB57B1BA23883009E928C /* ViewController.h */,
 				14AAB57C1BA23883009E928C /* ViewController.m */,
 				14AAB57E1BA23883009E928C /* Main.storyboard */,
 				14AAB5811BA23883009E928C /* Assets.xcassets */,
-				14AAB5831BA23883009E928C /* LaunchScreen.storyboard */,
 				14AAB5861BA23883009E928C /* Info.plist */,
 				14AAB5751BA23883009E928C /* Supporting Files */,
 			);
@@ -89,6 +152,7 @@
 				14AAB56E1BA23883009E928C /* Sources */,
 				14AAB56F1BA23883009E928C /* Frameworks */,
 				14AAB5701BA23883009E928C /* Resources */,
+				14A590261BA2904D001BADC6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -110,6 +174,7 @@
 				TargetAttributes = {
 					14AAB5711BA23883009E928C = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = SY7ZABS5XS;
 					};
 				};
 			};
@@ -136,9 +201,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AAB5851BA23883009E928C /* LaunchScreen.storyboard in Resources */,
 				14AAB5821BA23883009E928C /* Assets.xcassets in Resources */,
 				14AAB5801BA23883009E928C /* Main.storyboard in Resources */,
+				14AAB58D1BA23981009E928C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +214,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A590521BA29EB1001BADC6 /* OAuthClass.m in Sources */,
+				14A590601BA2A711001BADC6 /* OARequestParameter.m in Sources */,
+				14A5905D1BA2A485001BADC6 /* NSURL+Base.m in Sources */,
+				14A590631BA2A799001BADC6 /* OAToken.m in Sources */,
 				14AAB57D1BA23883009E928C /* ViewController.m in Sources */,
 				14AAB57A1BA23883009E928C /* AppDelegate.m in Sources */,
 				14AAB5771BA23883009E928C /* main.m in Sources */,
+				14A5905C1BA2A485001BADC6 /* NSString+URLEncoding.m in Sources */,
+				14A590661BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m in Sources */,
+				14AAB5961BA23A42009E928C /* LocalBusinesses.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,14 +236,6 @@
 				14AAB57F1BA23883009E928C /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		14AAB5831BA23883009E928C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14AAB5841BA23883009E928C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -213,7 +277,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"OAuthConsumer/**",
+					"$SDKROOT/usr/include/libxml2/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -250,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -261,10 +329,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$SDKROOT/usr/include/libxml2/**",
+					"OAuthConsumer/**",
+				);
 				INFOPLIST_FILE = TaskImprovonia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zerog.TaskImprovonia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -272,10 +357,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TaskImprovonia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zerog.TaskImprovonia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -298,6 +396,7 @@
 				14AAB58B1BA23883009E928C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

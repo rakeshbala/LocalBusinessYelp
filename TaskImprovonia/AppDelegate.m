@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "OAuthClass.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) NSMutableData *container;
 @end
 
 @implementation AppDelegate
@@ -17,8 +18,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.container = [NSMutableData data];
+    OAuthClass *oCl = [[OAuthClass alloc]init];
+    NSMutableURLRequest *req = [oCl createRequest];
+    
+    NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:req delegate:self startImmediately:NO];
+    [conn start];
     return YES;
 }
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    
+    [self.container appendData:data];
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    NSLog(@"%@",response);
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    NSString *fullResponse = [[NSString alloc]initWithData:self.container encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",fullResponse);
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    NSLog(@"%@",error.localizedDescription);
+}
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
