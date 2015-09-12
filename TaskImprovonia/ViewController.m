@@ -71,6 +71,7 @@
     /************* If JSON retrieved don't start from scratch *************/
     if (self.bJSON != nil) {
         [self performSegueWithIdentifier:SEGUE_DETAIL sender:sender];
+        return;
     }
     
     if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse){
