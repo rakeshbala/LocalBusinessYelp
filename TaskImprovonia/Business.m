@@ -13,14 +13,14 @@
 @implementation Business
 
 
-- (instancetype)initWithName:(NSString *)name address:(NSArray *)addElem imageURL:(NSString *)urlString
+- (instancetype)initWithName:(NSString *)name address:(NSArray *)addElems imageURL:(NSString *)urlString
                     andIndex:(NSIndexPath *)index
 {
     self = [super init];
     if (self) {
         self.name = name;
-        self.address = [addElem componentsJoinedByString:@", "];
-        self.imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@?",urlString]];
+        self.address = [addElems componentsJoinedByString:@", "];
+        self.imageURL = [NSURL URLWithString:urlString];
         self.index = index;
     }
     return self;
