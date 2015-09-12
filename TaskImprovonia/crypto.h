@@ -1,6 +1,14 @@
+//
+//  crypto.h
+//  TaskImprovonia
+//
+//  Created by Rakesh Balasubramanian on 9/12/15.
+//  Copyright © 2015 Rakesh Balasubramanian. All rights reserved.
+//
+
 /*
- *  Base64Transcoder.h
  *  Base64Test
+ *  OAuthConsumer
  *
  *  Created by Jonathan Wight on Tue Mar 18 2003.
  *  Copyright (c) 2003 Toxic Software. All rights reserved.
@@ -25,6 +33,13 @@
  *
  */
 
+
+
+#ifndef crypto_h
+#define crypto_h
+
+#include <stdio.h>
+extern void hmac_sha1(const u_int8_t *inText, size_t inTextLength, u_int8_t* inKey, const size_t inKeyLength, u_int8_t *outDigest);
 #include <stdlib.h>
 #include <stdbool.h>
 
@@ -34,3 +49,5 @@ extern size_t EstimateBas64DecodedDataSize(size_t inDataSize);
 extern bool Base64EncodeData(const void *inInputData, size_t inInputDataSize, char *outOutputData, size_t *ioOutputDataSize);
 extern bool Base64DecodeData(const void *inInputData, size_t inInputDataSize, void *ioOutputData, size_t *ioOutputDataSize);
 
+
+#endif /* crypto_h */

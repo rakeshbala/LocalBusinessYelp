@@ -22,6 +22,7 @@
 
 @dynamic clManager;
 
+/************* Custom getter to create and ask location access permission *************/
 -(CLLocationManager *)clManager{
     if(_clMangager == nil){
         _clMangager = [[CLLocationManager alloc]init];
@@ -41,19 +42,22 @@
     
 }
 
+
+/************* Pass retreived information to table vc *************/
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
     if(self.bJSON != nil){
         LocalBusinesses *lTVC = [segue destinationViewController];
         NSMutableArray *bussinessList = [NSMutableArray array];
         NSMutableArray *tempList =[self.bJSON valueForKey:BUSINESSES_KEY];
+        /************* Create 'Business' objects from the JSON *************/
         for (int i=0; i< tempList.count; i++) {
             NSDictionary *bDict = tempList[i];
-            NSArray *address = bDict[@"location"][@"display_address"];
+            NSArray *address = bDict[LOCATION_KEY][ADDRESS_KEY];
             NSIndexPath *ind = [NSIndexPath indexPathForRow:i inSection:0];
-            Business *bObj = [[Business alloc]initWithName:bDict[@"name"]
+            Business *bObj = [[Business alloc]initWithName:bDict[NAME_KEY]
                                                    address:address
-                                                  imageURL:bDict[@"image_url"]
+                                                  imageURL:bDict[IMG_URL_KEY]
                                                   andIndex:ind];
             [bussinessList addObject:bObj];
         }
@@ -64,6 +68,7 @@
 
 - (IBAction)startLocationAndAskYelp:(id)sender {
     
+    /************* If JSON retrieved don't start from scratch *************/
     if (self.bJSON != nil) {
         [self performSegueWithIdentifier:SEGUE_DETAIL sender:sender];
     }
@@ -71,7 +76,7 @@
     if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse){
         [self.clManager startUpdatingLocation];
     }else{
-
+        /************* If location access denied *************/
         [[[UIAlertView alloc]initWithTitle:NOT_AUTHORIZED
                                    message:NO_PERMISSIONS_DESC
                                   delegate:nil
@@ -81,21 +86,25 @@
 }
 
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-    [self.clManager stopUpdatingLocation];
-    NSLog(@"Recorded location: %@",locations);
+-(void)locationManager:(CLLocationManager *)manager
+    didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    
+    [self.clManager stopUpdatingLocation]; //Need location only once while app starts
     self.location = [locations firstObject];
     [self.loadingView startAnimating];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     OAuthClass *oCl = [[OAuthClass alloc]init];
     NSString *locationString = [NSString stringWithFormat:@"%f,%f",
-                                self.location.coordinate.latitude,self.location.coordinate.longitude];
+                                self.location.coordinate.latitude,
+                                self.location.coordinate.longitude];
     NSDictionary *params = @{
                              @"ll": locationString,
                              @"limit": @20
                              };
-    NSMutableURLRequest *req = [oCl createRequestWithParams:params];
-    self.conn = [[NSURLConnection alloc]initWithRequest:req delegate:self startImmediately:NO];
+    NSMutableURLRequest *req = [oCl createRequestWithParams:params]; //OAuth authenticated request
+    self.conn = [[NSURLConnection alloc]initWithRequest:req
+                                               delegate:self
+                                       startImmediately:NO];
     [self.conn start];
 }
 
@@ -105,13 +114,10 @@
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection{
     
-//    NSString *fullResponse = [[NSString alloc]initWithData:self.container encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@",fullResponse);
     NSError *error;
     self.bJSON = [NSJSONSerialization JSONObjectWithData:self.container
-                                                                options:NSJSONReadingMutableContainers error:&error];
-//    NSLog(@"%@",self.bJSON);
-    
+                                                 options:NSJSONReadingMutableContainers
+                                                   error:&error];    
     [self performSegueWithIdentifier:SEGUE_DETAIL sender:nil];
     [self.loadingView stopAnimating];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

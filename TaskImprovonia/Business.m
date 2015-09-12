@@ -25,9 +25,9 @@
     return self;
 }
 
+
+/************* Load image and call the completion handler block *************/
 -(void)loadImageWithHandler:(void(^)(void))completionBlock{
-    
-//    NSLog(@"Loading object at %@",self.index);
     
     NSURLRequest *req = [NSURLRequest requestWithURL:self.imageURL];
     [NSURLConnection sendAsynchronousRequest:req
@@ -38,9 +38,10 @@
 
                                if(connectionError){
                                    NSLog(@"%@",connectionError.localizedDescription);
-                                   self.image = [UIImage imageNamed:@"error_image_100x100.png"];
+                                   self.image = [UIImage imageNamed:@"error_image_80x80.png"];
                                }else{
                                    UIImage *tempImage = [UIImage imageWithData:data];
+                                   /************* Reduce size of image if it is not 80x80 *************/
                                    if (tempImage.size.width != 80 || tempImage.size.height != 80)
                                    {
                                        CGSize itemSize = CGSizeMake(80, 80);

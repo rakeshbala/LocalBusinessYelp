@@ -6,23 +6,18 @@
 //  Copyright © 2015 Rakesh Balasubramanian. All rights reserved.
 //
 
-#import "LocalBusinesses.h"
 #import <Accounts/ACAccountCredential.h>
 #import "Constants.h"
 #import "Business.h"
 #import "ViewController.h"
+#import "LocalBusinesses.h"
 
-@interface LocalBusinesses ()
-
-@end
 
 @implementation LocalBusinesses
 
-
-
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.title = @"Local Businesses";
+    self.title = LOCAL_BUSINESS_STR;
 }
 
 #pragma mark - Table view data source
@@ -51,15 +46,16 @@
         cell.imageView.hidden = NO;
 
     }else{
+        /************* Load lazily *************/
         UIView *indicator = [cell viewWithTag:20];
-        indicator.hidden = NO;
+        indicator.hidden = NO; //remove loading text
         [bObj loadImageWithHandler:^{
+            /************* Update cell after image load completes *************/
             UITableViewCell *cellLater = [tableView cellForRowAtIndexPath:bObj.index];
             cellLater.imageView.image=bObj.image;
             UIView *indicator = [cell viewWithTag:20];
             indicator.hidden = YES;
             cell.imageView.hidden = NO;
-
         }];
     }
     return cell;
