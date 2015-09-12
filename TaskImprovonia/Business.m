@@ -8,6 +8,7 @@
 
 #import "Business.h"
 
+#define img_size 80
 
 @implementation Business
 
@@ -42,9 +43,9 @@
                                }else{
                                    UIImage *tempImage = [UIImage imageWithData:data];
                                    /************* Reduce size of image if it is not 80x80 *************/
-                                   if (tempImage.size.width != 80 || tempImage.size.height != 80)
+                                   if (tempImage.size.width != img_size || tempImage.size.height != img_size)
                                    {
-                                       CGSize itemSize = CGSizeMake(80, 80);
+                                       CGSize itemSize = CGSizeMake(img_size, img_size);
                                        UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0f);
                                        CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
                                        [tempImage drawInRect:imageRect];

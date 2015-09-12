@@ -10,7 +10,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController <NSURLConnectionDelegate,NSURLConnectionDataDelegate,CLLocationManagerDelegate>{
+@interface ViewController : UIViewController <NSURLConnectionDelegate,
+        NSURLConnectionDataDelegate,CLLocationManagerDelegate>{
+            
     CLLocationManager *_clMangager;
 }
 
