@@ -10,6 +10,7 @@
 		1415B5401BA3C64000FA8F7D /* yelp_logo_100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 1415B53F1BA3C64000FA8F7D /* yelp_logo_100x100.png */; };
 		1415B5431BA3C79B00FA8F7D /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415B5421BA3C79B00FA8F7D /* Business.m */; };
 		1415B5451BA3CAC100FA8F7D /* error_image_100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 1415B5441BA3CAC100FA8F7D /* error_image_100x100.png */; };
+		1415B5481BA3D4ED00FA8F7D /* Loading_yelp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1415B5471BA3D4ED00FA8F7D /* Loading_yelp.png */; };
 		14A5904F1BA29C82001BADC6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5904E1BA29C82001BADC6 /* Accounts.framework */; };
 		14A590521BA29EB1001BADC6 /* OAuthClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590511BA29EB1001BADC6 /* OAuthClass.m */; };
 		14A5905C1BA2A485001BADC6 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590581BA2A485001BADC6 /* NSString+URLEncoding.m */; };
@@ -46,6 +47,7 @@
 		1415B5411BA3C79B00FA8F7D /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		1415B5421BA3C79B00FA8F7D /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
 		1415B5441BA3CAC100FA8F7D /* error_image_100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error_image_100x100.png; sourceTree = "<group>"; };
+		1415B5471BA3D4ED00FA8F7D /* Loading_yelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loading_yelp.png; sourceTree = "<group>"; };
 		14A5904E1BA29C82001BADC6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		14A590501BA29EB1001BADC6 /* OAuthClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthClass.h; sourceTree = "<group>"; };
 		14A590511BA29EB1001BADC6 /* OAuthClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthClass.m; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				14A9E5391BA351960064430A /* Powered_By_Yelp_Red.png */,
 				1415B5441BA3CAC100FA8F7D /* error_image_100x100.png */,
 				1415B53F1BA3C64000FA8F7D /* yelp_logo_100x100.png */,
+				1415B5471BA3D4ED00FA8F7D /* Loading_yelp.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				1415B5401BA3C64000FA8F7D /* yelp_logo_100x100.png in Resources */,
 				14A9E53A1BA351960064430A /* Powered_By_Yelp_Red.png in Resources */,
 				14AAB5801BA23883009E928C /* Main.storyboard in Resources */,
+				1415B5481BA3D4ED00FA8F7D /* Loading_yelp.png in Resources */,
 				14AAB58D1BA23981009E928C /* Default-568h@2x.png in Resources */,
 				1415B5451BA3CAC100FA8F7D /* error_image_100x100.png in Resources */,
 			);

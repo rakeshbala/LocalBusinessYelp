@@ -10,6 +10,7 @@
 #import "Constants.h"
 #import "LocalBusinesses.h"
 #import "AppDelegate.h"
+#import "Business.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) NSURLConnection *conn;
@@ -34,9 +35,6 @@
 
     /****** Setup data container , connection and location manager ****/
     self.container = [NSMutableData data];
-    OAuthClass *oCl = [[OAuthClass alloc]init];
-    NSMutableURLRequest *req = [oCl createRequest];
-    self.conn = [[NSURLConnection alloc]initWithRequest:req delegate:self startImmediately:NO];
     self.clManager.delegate = self;
     self.clManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     self.clManager.distanceFilter = 30;
@@ -47,7 +45,19 @@
     
     if(self.bJSON != nil){
         LocalBusinesses *lTVC = [segue destinationViewController];
-        lTVC.listItems = [self.bJSON valueForKey:BUSINESSES_KEY];
+        NSMutableArray *bussinessList = [NSMutableArray array];
+        NSMutableArray *tempList =[self.bJSON valueForKey:BUSINESSES_KEY];
+        for (int i=0; i< tempList.count; i++) {
+            NSDictionary *bDict = tempList[i];
+            NSArray *address = bDict[@"location"][@"display_address"];
+            NSIndexPath *ind = [NSIndexPath indexPathForRow:i inSection:0];
+            Business *bObj = [[Business alloc]initWithName:bDict[@"name"]
+                                                   address:address
+                                                  imageURL:bDict[@"image_url"]
+                                                  andIndex:ind];
+            [bussinessList addObject:bObj];
+        }
+        lTVC.listItems = bussinessList;
     }
 }
 
@@ -77,6 +87,15 @@
     self.location = [locations firstObject];
     [self.loadingView startAnimating];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    OAuthClass *oCl = [[OAuthClass alloc]init];
+    NSString *locationString = [NSString stringWithFormat:@"%f,%f",
+                                self.location.coordinate.latitude,self.location.coordinate.longitude];
+    NSDictionary *params = @{
+                             @"ll": locationString,
+                             @"limit": @20
+                             };
+    NSMutableURLRequest *req = [oCl createRequestWithParams:params];
+    self.conn = [[NSURLConnection alloc]initWithRequest:req delegate:self startImmediately:NO];
     [self.conn start];
 }
 

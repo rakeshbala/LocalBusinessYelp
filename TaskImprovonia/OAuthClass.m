@@ -35,66 +35,55 @@ static NSString * const kSearchPath        = @"/v2/search";
 }
 
 
--(NSMutableURLRequest *)createRequest{
+
+
+-(NSMutableURLRequest *)createRequestWithParams:(NSDictionary *)params{
     
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] init] ;
-    NSDictionary *params = @{
-                             @"location": @"San Francisco, CA",
-                             @"limit": @20
-                             };
     NSURL *url = [self URLWithHost:kAPIHost path:kSearchPath queryParameters:params];
-
     [urlRequest setURL:url];
     [urlRequest setHTTPMethod:@"GET"];
-   // [urlRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-   // [urlRequest setValue:@"utf-8" forHTTPHeaderField:@"charset"];
-
     NSString *baseString = [self signatureBaseString:urlRequest];
-//    baseString = [baseString stringByReplacingOccurrencesOfString:@"&" withString:@"\\u0026"];
-//    NSLog(@"Sent base string : %@",baseString);
-    NSString *signature = [self signClearText:baseString
-                                      withSecret:[NSString stringWithFormat:@"%@&%@",
-                                                  [self.consumerSecret encodedURLParameterString],
-                                                  self.token.secret ? [self.token.secret encodedURLParameterString] : @""]];
+    NSString *secret = [NSString stringWithFormat:@"%@&%@",
+                        [self.consumerSecret encodedURLParameterString],
+                        self.token.secret ? [self.token.secret encodedURLParameterString]:@""];
+    NSString *signature = [self signClearText:baseString withSecret:secret];
     
     // set OAuth headers
     NSMutableArray *chunks = [[NSMutableArray alloc] init];
     [chunks addObject:[NSString stringWithFormat:@"realm=\"%@\"", @""]];
-    [chunks addObject:[NSString stringWithFormat:@"oauth_consumer_key=\"%@\"", [self.consumerKey encodedURLParameterString]]];
-    
+    [chunks addObject:[NSString stringWithFormat:@"oauth_consumer_key=\"%@\"",
+                       [self.consumerKey encodedURLParameterString]]];
     NSDictionary *tokenParameters = [self.token parameters];
     for (NSString *k in tokenParameters) {
-        [chunks addObject:[NSString stringWithFormat:@"%@=\"%@\"", k, [[tokenParameters objectForKey:k] encodedURLParameterString]]];
+        [chunks addObject:[NSString stringWithFormat:@"%@=\"%@\"",
+                           k, [[tokenParameters objectForKey:k] encodedURLParameterString]]];
     }
-    
-    [chunks addObject:[NSString stringWithFormat:@"oauth_signature_method=\"%@\"", [@"HMAC-SHA1" encodedURLParameterString]]];
-    [chunks addObject:[NSString stringWithFormat:@"oauth_signature=\"%@\"", [signature encodedURLParameterString]]];
+    [chunks addObject:[NSString stringWithFormat:@"oauth_signature_method=\"%@\"",
+                       [@"HMAC-SHA1" encodedURLParameterString]]];
+    [chunks addObject:[NSString stringWithFormat:@"oauth_signature=\"%@\"",
+                       [signature encodedURLParameterString]]];
     [chunks addObject:[NSString stringWithFormat:@"oauth_timestamp=\"%@\"", self.timeStamp]];
     [chunks addObject:[NSString stringWithFormat:@"oauth_nonce=\"%@\"", self.nonce]];
     [chunks	addObject:@"oauth_version=\"1.0\""];
     
-    NSString *oauthHeader = [NSString stringWithFormat:@"OAuth %@", [chunks componentsJoinedByString:@", "]];
-    
+    NSString *oauthHeader = [NSString stringWithFormat:@"OAuth %@",
+                             [chunks componentsJoinedByString:@", "]];
     [urlRequest setValue:oauthHeader forHTTPHeaderField:@"Authorization"];
-
-    
     return urlRequest;
 }
 
 - (NSURL *)URLWithHost:(NSString *)host path:(NSString *)path queryParameters:(NSDictionary *)queryParameters {
-    
     NSMutableArray *queryParts = [[NSMutableArray alloc] init];
     for (NSString *key in [queryParameters allKeys]) {
         NSString *queryPart = [NSString stringWithFormat:@"%@=%@", key, queryParameters[key]];
         [queryParts addObject:queryPart];
     }
-    
     NSURLComponents *components = [[NSURLComponents alloc] init];
     components.scheme = @"http";
     components.host = host;
     components.path = path;
     components.query = [queryParts componentsJoinedByString:@"&"];
-    
     return [components URL];
 }
 
@@ -105,7 +94,6 @@ static NSString * const kSearchPath        = @"/v2/search";
     hmac_sha1((unsigned char *)[clearTextData bytes], [clearTextData length], (unsigned char *)[secretData bytes], [secretData length], result);
     
     //Base64 Encoding
-    
     char base64Result[32];
     size_t theResultLength = 32;
     Base64EncodeData(result, 20, base64Result, &theResultLength);

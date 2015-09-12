@@ -19,5 +19,5 @@
 @property (strong,nonatomic) NSString *timeStamp;
 @property (strong,nonatomic) OAToken *token;
 - (NSString *)signClearText:(NSString *)text withSecret:(NSString *)secret;
-- (NSMutableURLRequest *)createRequest;
+- (NSMutableURLRequest *)createRequestWithParams:(NSDictionary *)params;
 @end
