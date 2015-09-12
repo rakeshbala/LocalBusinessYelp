@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,19 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6J-gL-dxp">
-                                <rect key="frame" x="59" y="312" width="258" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6J-gL-dxp">
+                                <rect key="frame" x="107" y="309" width="162" height="37"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <state key="normal" title="Businesses Nearby"/>
                                 <connections>
-                                    <segue destination="N6w-4v-3Wp" kind="showDetail" id="xhc-xx-y6P"/>
+                                    <action selector="startLocationAndAskYelp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HBA-AN-tm3"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Powered_By_Yelp_Red.png" translatesAutoresizingMaskIntoConstraints="NO" id="Og3-Jk-bte">
+                                <rect key="frame" x="223" y="619" width="136" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="136" id="LnJ-vw-6W9"/>
+                                    <constraint firstAttribute="width" constant="136" id="jKc-pj-KAh"/>
+                                    <constraint firstAttribute="height" constant="28" id="mBa-q3-OYb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="x0L-n4-rBd"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ysY-9c-tHz">
+                                <rect key="frame" x="174" y="395" width="28" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="YyC-aq-KuC"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ysY-9c-tHz" firstAttribute="centerX" secondItem="n6J-gL-dxp" secondAttribute="centerX" id="Ffb-DV-bzE"/>
+                            <constraint firstItem="ysY-9c-tHz" firstAttribute="top" secondItem="n6J-gL-dxp" secondAttribute="bottom" constant="49" id="RRu-nU-kC2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Og3-Jk-bte" secondAttribute="bottom" constant="20" id="U9M-0f-S1m"/>
+                            <constraint firstItem="Og3-Jk-bte" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cGP-ll-Iv2"/>
+                            <constraint firstItem="n6J-gL-dxp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-6.5" id="h8u-0m-9pf"/>
+                            <constraint firstItem="n6J-gL-dxp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rwT-z1-i5h"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tOb-ni-7O8"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="loadingView" destination="ysY-9c-tHz" id="mpz-vw-J2b"/>
+                        <segue destination="N6w-4v-3Wp" kind="show" identifier="detail" id="zKa-Dr-r3z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,12 +89,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuse" rowHeight="121" id="wYD-Bi-GcY">
-                                <rect key="frame" x="0.0" y="28" width="375" height="121"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuse" textLabel="953-XT-vBb" detailTextLabel="9L7-DM-64m" imageView="hFL-0h-YzH" rowHeight="121" style="IBUITableViewCellStyleSubtitle" id="wYD-Bi-GcY">
+                                <rect key="frame" x="0.0" y="92" width="375" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wYD-Bi-GcY" id="W5M-F4-Alm">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="953-XT-vBb">
+                                            <rect key="frame" x="130" y="44" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9L7-DM-64m">
+                                            <rect key="frame" x="130" y="63.5" width="40.5" height="13.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="yelp_logo_100x100.png" id="hFL-0h-YzH">
+                                            <rect key="frame" x="15" y="10" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -82,4 +130,8 @@
             <point key="canvasLocation" x="740.5" y="242.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Powered_By_Yelp_Red.png" width="115" height="25"/>
+        <image name="yelp_logo_100x100.png" width="100" height="100"/>
+    </resources>
 </document>

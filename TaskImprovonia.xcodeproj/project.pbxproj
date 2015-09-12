@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1415B5401BA3C64000FA8F7D /* yelp_logo_100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 1415B53F1BA3C64000FA8F7D /* yelp_logo_100x100.png */; };
+		1415B5431BA3C79B00FA8F7D /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415B5421BA3C79B00FA8F7D /* Business.m */; };
+		1415B5451BA3CAC100FA8F7D /* error_image_100x100.png in Resources */ = {isa = PBXBuildFile; fileRef = 1415B5441BA3CAC100FA8F7D /* error_image_100x100.png */; };
 		14A5904F1BA29C82001BADC6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5904E1BA29C82001BADC6 /* Accounts.framework */; };
 		14A590521BA29EB1001BADC6 /* OAuthClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590511BA29EB1001BADC6 /* OAuthClass.m */; };
 		14A5905C1BA2A485001BADC6 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590581BA2A485001BADC6 /* NSString+URLEncoding.m */; };
@@ -14,6 +17,9 @@
 		14A590601BA2A711001BADC6 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A5905F1BA2A711001BADC6 /* OARequestParameter.m */; };
 		14A590631BA2A799001BADC6 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590621BA2A799001BADC6 /* OAToken.m */; };
 		14A590661BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A590651BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m */; };
+		14A9E53A1BA351960064430A /* Powered_By_Yelp_Red.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A9E5391BA351960064430A /* Powered_By_Yelp_Red.png */; };
+		14A9E53C1BA3A4600064430A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A9E53B1BA3A4600064430A /* CoreLocation.framework */; };
+		14A9E53F1BA3B1910064430A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A9E53E1BA3B1910064430A /* Constants.m */; };
 		14AAB5771BA23883009E928C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB5761BA23883009E928C /* main.m */; };
 		14AAB57A1BA23883009E928C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB5791BA23883009E928C /* AppDelegate.m */; };
 		14AAB57D1BA23883009E928C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14AAB57C1BA23883009E928C /* ViewController.m */; };
@@ -36,6 +42,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1415B53F1BA3C64000FA8F7D /* yelp_logo_100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yelp_logo_100x100.png; sourceTree = "<group>"; };
+		1415B5411BA3C79B00FA8F7D /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
+		1415B5421BA3C79B00FA8F7D /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
+		1415B5441BA3CAC100FA8F7D /* error_image_100x100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error_image_100x100.png; sourceTree = "<group>"; };
 		14A5904E1BA29C82001BADC6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		14A590501BA29EB1001BADC6 /* OAuthClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthClass.h; sourceTree = "<group>"; };
 		14A590511BA29EB1001BADC6 /* OAuthClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthClass.m; sourceTree = "<group>"; };
@@ -51,6 +61,10 @@
 		14A590651BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		14A590681BA2BCA0001BADC6 /* hmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
 		14A590691BA2BCC3001BADC6 /* Base64Transcoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		14A9E5391BA351960064430A /* Powered_By_Yelp_Red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Powered_By_Yelp_Red.png; sourceTree = "<group>"; };
+		14A9E53B1BA3A4600064430A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		14A9E53D1BA3B06A0064430A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		14A9E53E1BA3B1910064430A /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		14AAB5721BA23883009E928C /* TaskImprovonia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskImprovonia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14AAB5761BA23883009E928C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14AAB5781BA23883009E928C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A9E53C1BA3A4600064430A /* CoreLocation.framework in Frameworks */,
 				14A5904F1BA29C82001BADC6 /* Accounts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1415B5461BA3CAC700FA8F7D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				14A9E5391BA351960064430A /* Powered_By_Yelp_Red.png */,
+				1415B5441BA3CAC100FA8F7D /* error_image_100x100.png */,
+				1415B53F1BA3C64000FA8F7D /* yelp_logo_100x100.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		14A590671BA2AF0E001BADC6 /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +126,7 @@
 		14AAB5691BA23883009E928C = {
 			isa = PBXGroup;
 			children = (
+				14A9E53B1BA3A4600064430A /* CoreLocation.framework */,
 				14A5904E1BA29C82001BADC6 /* Accounts.framework */,
 				14AAB58C1BA23981009E928C /* Default-568h@2x.png */,
 				14AAB5741BA23883009E928C /* TaskImprovonia */,
@@ -122,11 +148,16 @@
 				14A590671BA2AF0E001BADC6 /* OAuth */,
 				14AAB5941BA23A42009E928C /* LocalBusinesses.h */,
 				14AAB5951BA23A42009E928C /* LocalBusinesses.m */,
+				1415B5411BA3C79B00FA8F7D /* Business.h */,
+				1415B5421BA3C79B00FA8F7D /* Business.m */,
 				14AAB5781BA23883009E928C /* AppDelegate.h */,
 				14AAB5791BA23883009E928C /* AppDelegate.m */,
 				14AAB57B1BA23883009E928C /* ViewController.h */,
 				14AAB57C1BA23883009E928C /* ViewController.m */,
+				14A9E53D1BA3B06A0064430A /* Constants.h */,
+				14A9E53E1BA3B1910064430A /* Constants.m */,
 				14AAB57E1BA23883009E928C /* Main.storyboard */,
+				1415B5461BA3CAC700FA8F7D /* images */,
 				14AAB5811BA23883009E928C /* Assets.xcassets */,
 				14AAB5861BA23883009E928C /* Info.plist */,
 				14AAB5751BA23883009E928C /* Supporting Files */,
@@ -202,8 +233,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				14AAB5821BA23883009E928C /* Assets.xcassets in Resources */,
+				1415B5401BA3C64000FA8F7D /* yelp_logo_100x100.png in Resources */,
+				14A9E53A1BA351960064430A /* Powered_By_Yelp_Red.png in Resources */,
 				14AAB5801BA23883009E928C /* Main.storyboard in Resources */,
 				14AAB58D1BA23981009E928C /* Default-568h@2x.png in Resources */,
+				1415B5451BA3CAC100FA8F7D /* error_image_100x100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A9E53F1BA3B1910064430A /* Constants.m in Sources */,
 				14A590521BA29EB1001BADC6 /* OAuthClass.m in Sources */,
 				14A590601BA2A711001BADC6 /* OARequestParameter.m in Sources */,
 				14A5905D1BA2A485001BADC6 /* NSURL+Base.m in Sources */,
@@ -222,6 +257,7 @@
 				14AAB57A1BA23883009E928C /* AppDelegate.m in Sources */,
 				14AAB5771BA23883009E928C /* main.m in Sources */,
 				14A5905C1BA2A485001BADC6 /* NSString+URLEncoding.m in Sources */,
+				1415B5431BA3C79B00FA8F7D /* Business.m in Sources */,
 				14A590661BA2A811001BADC6 /* NSMutableURLRequest+Parameters.m in Sources */,
 				14AAB5961BA23A42009E928C /* LocalBusinesses.m in Sources */,
 			);

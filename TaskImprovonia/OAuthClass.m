@@ -51,7 +51,7 @@ static NSString * const kSearchPath        = @"/v2/search";
 
     NSString *baseString = [self signatureBaseString:urlRequest];
 //    baseString = [baseString stringByReplacingOccurrencesOfString:@"&" withString:@"\\u0026"];
-    NSLog(@"Sent base string : %@",baseString);
+//    NSLog(@"Sent base string : %@",baseString);
     NSString *signature = [self signClearText:baseString
                                       withSecret:[NSString stringWithFormat:@"%@&%@",
                                                   [self.consumerSecret encodedURLParameterString],

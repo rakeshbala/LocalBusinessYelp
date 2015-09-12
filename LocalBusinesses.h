@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LocalBusinesses : UITableViewController
+@property (strong) NSJSONSerialization *businessJSON;
 @property (strong) NSMutableArray *listItems;
 @end

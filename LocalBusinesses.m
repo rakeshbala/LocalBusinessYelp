@@ -8,6 +8,7 @@
 
 #import "LocalBusinesses.h"
 #import <Accounts/ACAccountCredential.h>
+#import "Constants.h"
 
 @interface LocalBusinesses ()
 
@@ -17,18 +18,10 @@
 
 
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.listItems = [NSMutableArray arrayWithCapacity:50];
-        for (int i=0; i<50; i++) {
-            [self.listItems addObject:@(i)];
-        }
-    }
-    return self;
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    self.title = @"Local Businesses";
 }
-    
 
 #pragma mark - Table view data source
 
@@ -42,11 +35,10 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuse" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",self.listItems[indexPath.row]];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:REUSE_ID forIndexPath:indexPath];
+    cell.textLabel.text = [self.listItems[indexPath.row] valueForKey:@"name"];
     return cell;
 }
-
 
 
 
